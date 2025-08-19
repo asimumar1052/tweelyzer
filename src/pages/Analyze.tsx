@@ -104,24 +104,23 @@ export default function Analyze() {
           </Button>
           
           <div className="flex items-center gap-2 flex-wrap sm:flex-nowrap">
-            <Dialog>
-              <DialogTrigger asChild>
-                <Button variant="outline" size="sm" className="gap-2 flex-1 sm:flex-none min-w-0">
-                  <ExternalLink className="w-4 h-4 flex-shrink-0" />
-                  <span className="hidden sm:inline">View Details</span>
-                  <span className="sm:hidden">Details</span>
-                </Button>
-              </DialogTrigger>
-              <DialogContent className="max-w-4xl max-h-[80vh]">
-                <DialogHeader>
-                  <DialogTitle>Detailed Analysis</DialogTitle>
-                </DialogHeader>
-                <ScrollArea className="h-[calc(80vh-8rem)] pr-4">
-                  <FactCheckPanel data={data} />
-                </ScrollArea>
-              </DialogContent>
-            </Dialog>
-            
+            {/* <Dialog>
+                  <DialogTrigger asChild>
+                    <Button variant="outline" size="sm" className="gap-2 w-full">
+                      <ExternalLink className="w-4 h-4 flex-shrink-0" />
+                      <span className="hidden sm:inline">View Details</span>
+                      <span className="sm:hidden">Details</span>
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-4xl max-h-[80vh]">
+                    <DialogHeader>
+                      <DialogTitle>Detailed Analysis</DialogTitle>
+                    </DialogHeader>
+                    <ScrollArea className="h-[calc(80vh-8rem)] pr-4">
+                      <FactCheckPanel data={data} />
+                    </ScrollArea>
+                  </DialogContent>
+                </Dialog> */}
             <Button 
               onClick={handleDownloadReport}
               size="sm"
@@ -146,8 +145,27 @@ export default function Analyze() {
             {/* Fact Check */}
             <div className="flex flex-col">
               <FactCheckCompact data={data} />
+              {/* Details Button moved here */}
+              <div className="mt-3">
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button variant="outline" size="sm" className="gap-2 w-full">
+                      <ExternalLink className="w-4 h-4 flex-shrink-0" />
+                      <span className="hidden sm:inline">View Details</span>
+                      <span className="sm:hidden">Details</span>
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-4xl max-h-[80vh]">
+                    <DialogHeader>
+                      <DialogTitle>Detailed Analysis</DialogTitle>
+                    </DialogHeader>
+                    <ScrollArea className="h-[calc(80vh-8rem)] pr-4">
+                      <FactCheckPanel data={data} />
+                    </ScrollArea>
+                  </DialogContent>
+                </Dialog>
+              </div>
             </div>
-            
             {/* Sentiment */}
             <div className="flex flex-col">
               <SentimentDisplay sentiment={data.sentiment} />
