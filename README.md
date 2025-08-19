@@ -27,8 +27,6 @@ npm install --legacy-peer-deps
 npm run dev
 ```
 
-3. Open [http://localhost:5173](http://localhost:5173) in your browser
-
 ## Development
 
 - **Edit locally**: Clone this repo and use your preferred IDE
