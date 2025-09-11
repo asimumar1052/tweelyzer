@@ -1,0 +1,6 @@
+.env
+venv/
+__pycache__/
+*.pyc
+conf.py
+analyzers/IDK.txt
